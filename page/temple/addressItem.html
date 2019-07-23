@@ -1,0 +1,9 @@
+<%_.each(data,function(item,index){%>
+    <div <% if(item.isDefault){%> class="select" <%}%>>
+        <span class="info">
+            <p class="name"><%=item.name%>&nbsp;&nbsp;&nbsp;<%=item.phone%></p>
+            <p class="address"><%=item.address%></p>
+        </span>
+        <span class="modifybtn"><i class="ttlmfont">&#xe649;</i></span>
+    </div>
+<%})%>

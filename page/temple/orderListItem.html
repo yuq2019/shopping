@@ -1,0 +1,28 @@
+<%_.each(data,function(item,index){%>
+    <section class="item" data-id="<%=item.orderId%>">
+        <h2 class="title">
+            <span class="f_left"><%=item.orderDate%></span>
+            <strong class="f_right">
+                <%=item.state%>
+            </strong>
+        </h2>
+        <div class="picInfo">
+            <%_.each(item.products,function(product,pindex){%>
+                <span>
+                  <img src="<%=product.url%>" class="auto_pos"/>
+                </span>
+            <%})%>
+            <% if(item.products&&item.products.length==1){%>
+                <div class="productInfo"><%=item.products[0].title%></div>
+            <%}%>
+         </div>
+        <div class="bottomInfo">                                   
+            <span class="bLeft">
+                共<%=item.products&&item.products.length%>件商品 您需支付：<i>￥<%=item.totalPrice%></i>
+            </span>
+            <p class="bRight">
+                <a href="cart.html">再次购买</a>
+            </p>
+        </div>
+    </section>
+<%})%>

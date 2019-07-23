@@ -1,0 +1,73 @@
+<div class="address">
+    <p>
+      <span><%=data.addressInfo.name%></span><span class="phone"><%=data.addressInfo.phone%></span>
+    </p>
+    <p><%=data.addressInfo.address%></p>
+</div>
+
+<div class="productInfo">
+  <section>
+    <h2 class="title">                            
+        <span>共<%=data.products.length%>件商品</span>
+    </h2>
+    <div class="pList">
+      <div class="time">
+        <span>配送时间</span>                   
+        <span><%=data.sendDate%></span>                                   
+      </div>
+      <div class="list">
+        <ul>
+          <%_.each(data.products,function(product,index){%>
+            <li>
+              <div class="pic">
+                <a href="product.html?id=<%=product.id%>">
+                  <img src="<%=product.url%>">
+                </a>
+              </div>
+              <div class="info">
+                <span><%=product.title%></span>
+              </div>
+              <div class="priceNum">
+                <span class="price">￥<%=product.price%></span>
+                <span class="num">x <%=product.buyNum%></span>
+              </div>
+            </li>
+          <%})%>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="orderPay">
+  <div class="balance">
+    <ul>
+      <li>
+        <span class="title">订单状态</span><span class="desc"><%=data.state%></span>
+      </li>
+      <li>
+        <span class="title">支付方式</span><span class="desc"><%=data.payment%></span>
+      </li>
+      <li>
+        <span class="title">商品金额</span><span class="desc colorRed">￥<%=data.productPrice%></span>
+      </li>
+      <li>
+        <span class="title">优惠金额</span><span class="desc colorRed">-￥<%=data.discountPrice%></span>
+      </li>
+      <li>
+        <span class="title">运费</span><span class="desc colorRed">+￥<%=data.freightPrice%></span>
+      </li>
+    </ul>
+  </div>
+  <div class="total">
+    <p>应付款：<span class="colorRed">￥<%=data.totalPrice%></span></p>
+    <p class="orderNo size1">
+      <span>订单号：<%=data.orderNo%></span>
+    </p>
+    <p class="orderTime size1">
+      <span>下单时间：<%=data.orderDate%></span>
+    </p>
+  </div>
+</div>
+<div class="buyagain">
+  <a href="cart.html">再次购买</a>
+</div>

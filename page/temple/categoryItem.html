@@ -1,0 +1,33 @@
+<%_.each(data,function(item,index){%>
+  <div>
+    <%if(iscart){%>
+      <span class="checkboxwaper">
+        <i class="cm_checkbox"></i>
+      </span>
+    <%}%>
+    <span class='imgSpan'>
+      <img data-echo="<%=item.img%>">
+    </span>
+    <span class='productInfo'>
+      <div class="tit"><%=item.title%></div>
+      <div class="price">
+        <span class='now'>￥<h3><%=item.nowPrice%></h3></span>
+        <span class='market'>￥<%=item.marketPrice%></span>
+      </div>
+      <div class="buyNum">
+        <span class='del'>-</span>
+        <span class='num'><%=item.buyNum%></span>
+        <span class='add'>+</span>
+      </div>
+    </span>
+  </div>
+<%})%>
+<%if(issearch){%>
+  <div class="hasmoremsg">没有更多信息</div>
+  <div class="mycart">
+    <em class="ttlmfont">&#xe6af;</em>
+    <i class="cartNum">0</i>
+  </div>
+<%}else{%>
+  <div class="noContent"></div>
+<%}%>
